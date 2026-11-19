@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Dada BMW Store — Virtual Showroom & Test Drive</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo"><span class="mbar"><i></i><i></i><i></i></span>DADA <b>BMW</b> STORE</div>
+  <button class="ghost" data-book>Book Test Drive</button>
+</header>
+
+<main id="showroom">
+  <section class="stage">
+    <canvas id="car"></canvas>
+    <button class="arrow l" id="prev" aria-label="Previous car">&#8249;</button>
+    <button class="arrow r" id="next" aria-label="Next car">&#8250;</button>
+    <div class="tag"><small id="idx"></small><h1 id="name"></h1></div>
+  </section>
+  <aside class="panel glass">
+    <div id="specs" class="specs"></div>
+    <h3>Paint <span id="paintName"></span></h3>
+    <div id="paints" class="sw"></div>
+    <h3>Rims <span id="rimName"></span></h3>
+    <div id="rims" class="sw"></div>
+    <button class="cta" id="go">Test Drive This Car</button>
+  </aside>
+</main>
+
+<section id="drive" hidden>
+  <canvas id="world"></canvas>
+  <div class="hud glass">
+    <div class="spd"><b id="spd">0</b><small>km/h</small></div>
+    <div class="gear" id="gear">N</div>
+    <div class="rpm"><i id="rpmBar"></i></div>
+    <small id="carName"></small>
+  </div>
+  <div class="top">
+    <button class="ghost" id="exit">&#8592; Exit to Showroom</button>
+    <button class="ghost" id="cam">Camera: Chase (C)</button>
+  </div>
+  <div class="help">W/A/S/D or Arrows · Space = handbrake/drift · C = camera</div>
+  <div class="touch">
+    <div><button data-k="l">&#9664;</button><button data-k="r">&#9654;</button></div>
+    <div><button data-k="h">DRIFT</button><button data-k="d">BRAKE</button><button data-k="u" class="gas">GAS</button></div>
+  </div>
+</section>
+
+<footer>
+  <div><div class="logo small"><span class="mbar"><i></i><i></i><i></i></span>DADA <b>BMW</b> STORE</div>
+  <p>Experience the Ultimate Driving Machine.</p></div>
+  <button class="cta slim" data-book>Book Real Test Drive</button>
+  <small>© 2026 Dada BMW Store. Independent showroom concept; not affiliated with BMW AG.</small>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="glass box">
+    <button class="x" id="close" aria-label="Close">&times;</button>
+    <form id="form">
+      <h2>Book a Real Test Drive</h2>
+      <input name="n" placeholder="Full name" required>
+      <input name="e" type="email" placeholder="Email" required>
+      <select id="bm"></select>
+      <input name="d" type="date" required>
+      <button class="cta">Confirm Booking</button>
+    </form>
+    <div id="ok" hidden></div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
